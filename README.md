@@ -39,8 +39,28 @@ Dự án mô phỏng hệ thống quản trị quy trình phục vụ tại mộ
   * Tối ưu hiệu năng bộ nhớ bằng con trỏ hằng và hằng tham chiếu (`const &`)[cite: 2, 3].
 
 ---
+## 4. Lưu ý bổ sung & Cập nhật phiên bản (Changelog & Enhancements)
 
-## 4. Cấu trúc thư mục (Project Structure)
+Phiên bản hiện tại đã được tái cấu trúc và bổ sung phân hệ **CRUD Giỏ hàng hoàn chỉnh**, khắc phục các giới hạn logic ở phiên bản sơ khởi[cite: 1, 2]:
+
+* **Tái cấu trúc tìm kiếm (Nguyên lý DRY):** 
+  * Tách module tìm kiếm món bằng ID thành hàm độc lập `timViTriMonTheoID()`[cite: 2].
+  * Thay thế các vòng lặp tìm kiếm thủ công lặp lại trong code cũ bằng một lời gọi hàm tập trung, giúp mã nguồn tối ưu và đồng bộ khi tái sử dụng[cite: 1, 2].
+* **Chuẩn hóa chu trình CRUD Giỏ hàng (Cart CRUD Operations):**
+  * **[Read] Tự động cập nhật giao diện (`inGioHangHienTai`):** Luôn tự động hiển thị bảng giỏ hàng chi tiết (STT, món, kích cỡ, đơn giá, thành tiền, ghi chú) trước và ngay sau mỗi thao tác điều chỉnh để người dùng theo dõi trực quan[cite: 2].
+  * **[Create] Đặt món bổ sung:** Tích hợp tùy chọn cho phép gọi thêm đồ uống vào giỏ hàng hiện có và tự động gộp số lượng nếu phát hiện món trùng khớp[cite: 2].
+  * **[Update] Điều chỉnh linh hoạt (`chinhSuaMonTrongGio`):** Cho phép sửa số lượng hoặc ghi chú của món đã đặt[cite: 2]. Hệ thống tự động tính toán độ chênh lệch để bù/trừ ngược lại kho tồn (`status`), đồng thời ném cảnh báo nếu số lượng điều chỉnh vượt quá sức chứa tồn kho[cite: 2].
+  * **[Delete] Xóa món an toàn (`xoaMonKhoiGio`):** Cho phép hủy từng món ra khỏi đơn hàng và tự động hoàn trả số lượng đã đặt về lại kho thực đơn gốc[cite: 2].
+* **Rào lỗi cục bộ chống trôi màn hình (Localized Input Validation):** 
+  * Bọc riêng câu lệnh nhập tùy chọn `choice` vào một vòng lặp `while (true)` độc lập[cite: 2].
+  * Khi người dùng nhập sai số (ngoài khoảng 1–4) hoặc vô tình nhập ký tự chữ, hệ thống chỉ in cảnh báo và yêu cầu nhập lại ngay tại dòng đó, tuyệt đối không in lại toàn bộ bảng danh mục hay giỏ hàng gây rối mắt[cite: 2].
+* **Khắc phục lỗi logic hệ thống (Bug Fixes):**
+  * **Đồng bộ trạng thái bàn:** Tự động chuyển đổi trạng thái bàn về `Đang dọn` (`status = -1`) ngay sau khi hoàn tất thanh toán hóa đơn, tránh lỗi treo bàn vĩnh viễn ở trạng thái `Có khách` ở các lượt tiếp theo[cite: 2].
+  * **Xử lý trôi lệnh (`cin.ignore`):** Chuẩn hóa việc làm sạch bộ đệm nhập liệu bàn phím, loại bỏ lỗi nuốt ký tự đầu vào khi chuyển tiếp giữa các lượt đón khách[cite: 2].
+  * 
+> **Ghi chú:** Toàn bộ phần chỉnh sửa, tái cấu trúc và bổ sung tính năng nêu trên được thực hiện độc lập bởi cá nhân **Trần Nguyên** sau khi đã hoàn thành buổi bảo vệ đồ án. Cá nhân đã chủ động rà soát, hoàn thiện trọn vẹn các tính năng còn thiếu và khắc phục các lỗi sai logic/bộ nhớ do giảng viên hướng dẫn đã góp ý và chỉ ra.
+
+## 5. Cấu trúc thư mục (Project Structure)
 
 ```text
 ├── BAITAPLON_LTCS2_Nhom5.cpp   # Mã nguồn chính của chương trình C++
