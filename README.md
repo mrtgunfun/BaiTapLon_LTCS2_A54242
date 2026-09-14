@@ -7,21 +7,21 @@
 
 ## 1. Tổng quan đề tài (Overview)
 
-Dự án mô phỏng hệ thống quản trị quy trình phục vụ tại một quán cafe quy mô nhỏ. Chương trình xử lý toàn bộ chu trình nghiệp vụ thực tế từ khâu tiếp đón khách, quản lý trạng thái không gian bàn (dùng tại chỗ hoặc mang đi), xử lý giỏ hàng theo chu trình **CRUD** linh hoạt, đến áp dụng chính sách chiết khấu khách hàng VIP, tính thuế VAT tự động và lưu trữ dữ liệu giao dịch phục vụ phân tích thống kê[cite: 2, 3].
+Dự án mô phỏng hệ thống quản trị quy trình phục vụ tại một quán cafe quy mô nhỏ. Chương trình xử lý toàn bộ chu trình nghiệp vụ thực tế từ khâu tiếp đón khách, quản lý trạng thái không gian bàn (dùng tại chỗ hoặc mang đi), xử lý giỏ hàng theo chu trình **CRUD** linh hoạt, đến áp dụng chính sách chiết khấu khách hàng VIP, tính thuế VAT tự động và lưu trữ dữ liệu giao dịch phục vụ phân tích thống kê.
 
 ---
 
 ## 2. Tính năng cốt lõi (Key Features)
 
-* **Điều phối không gian & Phân tầng sơ đồ quán:** Quản lý 18 bàn trên ma trận 2 tầng (Trong nhà, Ngoài trời, Phòng họp) với 3 trạng thái thời gian thực: `Trống`, `Có khách`, `Đang dọn`[cite: 2, 3]. Hỗ trợ phân luồng nhanh cho khách mua mang về (`Take-away`)[cite: 2, 3].
-* **Thực đơn thông minh & Kiểm soát tồn kho:** Tự động phân loại danh mục (Cà phê, Trà, Sinh tố...) dựa trên mã ID[cite: 2, 3]. Tự động tính phụ thu/giảm giá theo kích cỡ (Size S/M/L) và chặn đặt hàng khi vượt ngưỡng tồn kho[cite: 2, 3].
+* **Điều phối không gian & Phân tầng sơ đồ quán:** Quản lý 18 bàn trên ma trận 2 tầng (Trong nhà, Ngoài trời, Phòng họp) với 3 trạng thái thời gian thực: `Trống`, `Có khách`, `Đang dọn`. Hỗ trợ phân luồng nhanh cho khách mua mang về (`Take-away`).
+* **Thực đơn thông minh & Kiểm soát tồn kho:** Tự động phân loại danh mục (Cà phê, Trà, Sinh tố...) dựa trên mã ID. Tự động tính phụ thu/giảm giá theo kích cỡ (Size S/M/L) và chặn đặt hàng khi vượt ngưỡng tồn kho.
 * **Quản lý giỏ hàng đầy đủ chu trình CRUD:**
-  * **Create:** Đặt món mới hoặc gọi bổ sung món vào đơn hiện tại[cite: 2].
-  * **Read:** Trực quan hóa danh sách món đã chọn theo dạng bảng chi tiết[cite: 2].
-  * **Update:** Điều chỉnh linh hoạt số lượng hoặc ghi chú của từng món, tự động bù/trừ số lượng tồn kho theo thời gian thực[cite: 2].
-  * **Delete:** Hủy món khỏi đơn và tự động hoàn trả số lượng về kho thực đơn tổng[cite: 2].
-* **Thanh toán & Chăm sóc khách hàng VIP:** Xác thực mã thành viên VIP để chiết khấu 10%[cite: 2, 3], tự động tính thuế VAT 8%[cite: 2, 3], tạo mã hóa đơn tự tăng và xuất biên lai với mốc thời gian thực của hệ thống[cite: 2, 3].
-* **Lưu trữ tệp & Phân tích Best Seller:** Lưu vết toàn bộ lịch sử giao dịch vào tệp `sales_history.txt`[cite: 2, 3]. Hỗ trợ phân tích, trích lọc dữ liệu và áp dụng thuật toán sắp xếp để xếp hạng Top 3 sản phẩm bán chạy nhất theo ngày, tháng hoặc năm[cite: 2, 3].
+  * **Create:** Đặt món mới hoặc gọi bổ sung món vào đơn hiện tại.
+  * **Read:** Trực quan hóa danh sách món đã chọn theo dạng bảng chi tiết.
+  * **Update:** Điều chỉnh linh hoạt số lượng hoặc ghi chú của từng món, tự động bù/trừ số lượng tồn kho theo thời gian thực.
+  * **Delete:** Hủy món khỏi đơn và tự động hoàn trả số lượng về kho thực đơn tổng.
+* **Thanh toán & Chăm sóc khách hàng VIP:** Xác thực mã thành viên VIP để chiết khấu 10%, tự động tính thuế VAT 8%, tạo mã hóa đơn tự tăng và xuất biên lai với mốc thời gian thực của hệ thống.
+* **Lưu trữ tệp & Phân tích Best Seller:** Lưu vết toàn bộ lịch sử giao dịch vào tệp `sales_history.txt`. Hỗ trợ phân tích, trích lọc dữ liệu và áp dụng thuật toán sắp xếp để xếp hạng Top 3 sản phẩm bán chạy nhất theo ngày, tháng hoặc năm.
 
 ---
 
@@ -29,34 +29,34 @@ Dự án mô phỏng hệ thống quản trị quy trình phục vụ tại mộ
 
 * **Phương pháp phát triển:** Lập trình hướng thủ tục (Procedural Programming) kết hợp Lập trình hướng cấu trúc.
 * **Cấu trúc dữ liệu (Data Structures):**
-  * `struct`: Đóng gói các thực thể dữ liệu nghiệp vụ (`DoUong`, `Ban`, `MonDaDat`, `HoaDon`, `ThongKeMon`)[cite: 2, 3].
-  * **Mảng động 2 chiều (`Ban** maTran`):** Cấp phát trên vùng nhớ Heap bằng toán tử `new`/`delete` để mô phỏng không gian sơ đồ bàn[cite: 2, 3].
-  * **Mảng động (`DoUong* menu`):** Quản lý thực đơn với kích thước tùy biến theo thời gian chạy[cite: 2, 3].
-  * **STL `std::vector`:** Lưu trữ giỏ hàng linh hoạt, tối ưu thao tác thêm/xóa phần tử theo nhu cầu đơn hàng[cite: 2, 3].
+  * `struct`: Đóng gói các thực thể dữ liệu nghiệp vụ (`DoUong`, `Ban`, `MonDaDat`, `HoaDon`, `ThongKeMon`).
+  * **Mảng động 2 chiều (`Ban** maTran`):** Cấp phát trên vùng nhớ Heap bằng toán tử `new`/`delete` để mô phỏng không gian sơ đồ bàn.
+  * **Mảng động (`DoUong* menu`):** Quản lý thực đơn với kích thước tùy biến theo thời gian chạy.
+  * **STL `std::vector`:** Lưu trữ giỏ hàng linh hoạt, tối ưu thao tác thêm/xóa phần tử theo nhu cầu đơn hàng.
 * **Kỹ thuật xử lý an toàn:**
-  * Bắt lỗi ngoại lệ (`try-catch` kết hợp `throw runtime_error`)[cite: 2, 3].
-  * Xóa cờ lỗi luồng nhập (`cin.clear()` & `cin.ignore()`) ngăn chặn hoàn toàn hiện tượng trôi lệnh và tràn bộ đệm khi nhập sai kiểu dữ liệu[cite: 2, 3].
-  * Tối ưu hiệu năng bộ nhớ bằng con trỏ hằng và hằng tham chiếu (`const &`)[cite: 2, 3].
+  * Bắt lỗi ngoại lệ (`try-catch` kết hợp `throw runtime_error`).
+  * Xóa cờ lỗi luồng nhập (`cin.clear()` & `cin.ignore()`) ngăn chặn hoàn toàn hiện tượng trôi lệnh và tràn bộ đệm khi nhập sai kiểu dữ liệu.
+  * Tối ưu hiệu năng bộ nhớ bằng con trỏ hằng và hằng tham chiếu (`const &`).
 
 ---
 ## 4. Lưu ý bổ sung & Cập nhật phiên bản (Changelog & Enhancements)
 
-Phiên bản hiện tại đã được tái cấu trúc và bổ sung phân hệ **CRUD Giỏ hàng hoàn chỉnh**, khắc phục các giới hạn logic ở phiên bản sơ khởi[cite: 1, 2]:
+Phiên bản hiện tại đã được tái cấu trúc và bổ sung phân hệ **CRUD Giỏ hàng hoàn chỉnh**, khắc phục các giới hạn logic ở phiên bản sơ khởi:
 
 * **Tái cấu trúc tìm kiếm (Nguyên lý DRY):** 
-  * Tách module tìm kiếm món bằng ID thành hàm độc lập `timViTriMonTheoID()`[cite: 2].
-  * Thay thế các vòng lặp tìm kiếm thủ công lặp lại trong code cũ bằng một lời gọi hàm tập trung, giúp mã nguồn tối ưu và đồng bộ khi tái sử dụng[cite: 1, 2].
+  * Tách module tìm kiếm món bằng ID thành hàm độc lập `timViTriMonTheoID()`.
+  * Thay thế các vòng lặp tìm kiếm thủ công lặp lại trong code cũ bằng một lời gọi hàm tập trung, giúp mã nguồn tối ưu và đồng bộ khi tái sử dụng.
 * **Chuẩn hóa chu trình CRUD Giỏ hàng (Cart CRUD Operations):**
-  * **[Read] Tự động cập nhật giao diện (`inGioHangHienTai`):** Luôn tự động hiển thị bảng giỏ hàng chi tiết (STT, món, kích cỡ, đơn giá, thành tiền, ghi chú) trước và ngay sau mỗi thao tác điều chỉnh để người dùng theo dõi trực quan[cite: 2].
-  * **[Create] Đặt món bổ sung:** Tích hợp tùy chọn cho phép gọi thêm đồ uống vào giỏ hàng hiện có và tự động gộp số lượng nếu phát hiện món trùng khớp[cite: 2].
-  * **[Update] Điều chỉnh linh hoạt (`chinhSuaMonTrongGio`):** Cho phép sửa số lượng hoặc ghi chú của món đã đặt[cite: 2]. Hệ thống tự động tính toán độ chênh lệch để bù/trừ ngược lại kho tồn (`status`), đồng thời ném cảnh báo nếu số lượng điều chỉnh vượt quá sức chứa tồn kho[cite: 2].
-  * **[Delete] Xóa món an toàn (`xoaMonKhoiGio`):** Cho phép hủy từng món ra khỏi đơn hàng và tự động hoàn trả số lượng đã đặt về lại kho thực đơn gốc[cite: 2].
+  * **[Read] Tự động cập nhật giao diện (`inGioHangHienTai`):** Luôn tự động hiển thị bảng giỏ hàng chi tiết (STT, món, kích cỡ, đơn giá, thành tiền, ghi chú) trước và ngay sau mỗi thao tác điều chỉnh để người dùng theo dõi trực quan.
+  * **[Create] Đặt món bổ sung:** Tích hợp tùy chọn cho phép gọi thêm đồ uống vào giỏ hàng hiện có và tự động gộp số lượng nếu phát hiện món trùng khớp.
+  * **[Update] Điều chỉnh linh hoạt (`chinhSuaMonTrongGio`):** Cho phép sửa số lượng hoặc ghi chú của món đã đặt. Hệ thống tự động tính toán độ chênh lệch để bù/trừ ngược lại kho tồn (`status`), đồng thời ném cảnh báo nếu số lượng điều chỉnh vượt quá sức chứa tồn kho.
+  * **[Delete] Xóa món an toàn (`xoaMonKhoiGio`):** Cho phép hủy từng món ra khỏi đơn hàng và tự động hoàn trả số lượng đã đặt về lại kho thực đơn gốc.
 * **Rào lỗi cục bộ chống trôi màn hình (Localized Input Validation):** 
-  * Bọc riêng câu lệnh nhập tùy chọn `choice` vào một vòng lặp `while (true)` độc lập[cite: 2].
-  * Khi người dùng nhập sai số (ngoài khoảng 1–4) hoặc vô tình nhập ký tự chữ, hệ thống chỉ in cảnh báo và yêu cầu nhập lại ngay tại dòng đó, tuyệt đối không in lại toàn bộ bảng danh mục hay giỏ hàng gây rối mắt[cite: 2].
+  * Bọc riêng câu lệnh nhập tùy chọn `choice` vào một vòng lặp `while (true)` độc lập.
+  * Khi người dùng nhập sai số (ngoài khoảng 1–4) hoặc vô tình nhập ký tự chữ, hệ thống chỉ in cảnh báo và yêu cầu nhập lại ngay tại dòng đó, tuyệt đối không in lại toàn bộ bảng danh mục hay giỏ hàng gây rối mắt.
 * **Khắc phục lỗi logic hệ thống (Bug Fixes):**
-  * **Đồng bộ trạng thái bàn:** Tự động chuyển đổi trạng thái bàn về `Đang dọn` (`status = -1`) ngay sau khi hoàn tất thanh toán hóa đơn, tránh lỗi treo bàn vĩnh viễn ở trạng thái `Có khách` ở các lượt tiếp theo[cite: 2].
-  * **Xử lý trôi lệnh (`cin.ignore`):** Chuẩn hóa việc làm sạch bộ đệm nhập liệu bàn phím, loại bỏ lỗi nuốt ký tự đầu vào khi chuyển tiếp giữa các lượt đón khách[cite: 2].
+  * **Đồng bộ trạng thái bàn:** Tự động chuyển đổi trạng thái bàn về `Đang dọn` (`status = -1`) ngay sau khi hoàn tất thanh toán hóa đơn, tránh lỗi treo bàn vĩnh viễn ở trạng thái `Có khách` ở các lượt tiếp theo.
+  * **Xử lý trôi lệnh (`cin.ignore`):** Chuẩn hóa việc làm sạch bộ đệm nhập liệu bàn phím, loại bỏ lỗi nuốt ký tự đầu vào khi chuyển tiếp giữa các lượt đón khách.
   * 
 > **Ghi chú:** Toàn bộ phần chỉnh sửa, tái cấu trúc và bổ sung tính năng nêu trên được thực hiện độc lập bởi cá nhân **Trần Nguyên** sau khi đã hoàn thành buổi bảo vệ đồ án. Cá nhân đã chủ động rà soát, hoàn thiện trọn vẹn các tính năng còn thiếu và khắc phục các lỗi sai logic/bộ nhớ do giảng viên hướng dẫn đã góp ý và chỉ ra.
 
